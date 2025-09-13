@@ -48,5 +48,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_SERVER_HOST }} >> ~/.ssh/known_hosts
           
           # Deploy via SSH
-          ssh -t -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER_HOST }} "cd log430-a25-labo0 && git pull origin main"
-
+          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER_HOST }} << 'EOF'
+            cd log430-a25-labo0
+            git pull origin main
+          EOF
