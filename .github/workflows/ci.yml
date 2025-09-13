@@ -49,9 +49,9 @@ jobs:
           
           # Deploy via SSH
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_SERVER_HOST }} << 'EOF'
-            cd log430-a25-labo3
+            cd log430-a25-labo0
             git pull origin main
             cd src
-            python3.11 store_manager.py
+            python3 store_manager.py
           EOF
 
