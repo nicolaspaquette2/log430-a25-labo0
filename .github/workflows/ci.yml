@@ -52,6 +52,6 @@ jobs:
             cd log430-a25-labo0
             git pull origin main
             cd src
-            python3 store_manager.py
+            python3 calculator.py
           EOF
 
